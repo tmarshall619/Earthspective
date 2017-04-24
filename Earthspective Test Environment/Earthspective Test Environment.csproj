@@ -75,6 +75,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DuplicateGameObject.cs" />
     <Compile Include="Assets\Scripts\Design Doc Scripts\Control Panel.cs" />
     <Compile Include="Assets\Scripts\Design Doc Scripts\Date.cs" />
     <Compile Include="Assets\Scripts\Design Doc Scripts\EventPin.cs" />

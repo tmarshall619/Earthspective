@@ -17,6 +17,8 @@ public class DragSpin : MonoBehaviour {
     bool mouseOver = false;
     bool mouseOverStart = false;
 
+    private int lerpTimeout = 0;
+
     // Use this for initialization
     void Start () {
 		
@@ -66,11 +68,13 @@ public class DragSpin : MonoBehaviour {
 
         if(reset == true)
         {
-            if (this.transform.rotation != Quaternion.identity)
+            if (this.transform.rotation != Quaternion.identity && lerpTimeout < 300)
             {
+                lerpTimeout++;
                 this.transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.identity, Time.deltaTime * 1f);
             }else
             {
+                lerpTimeout = 0;
                 reset = false;
             }
         }
